@@ -47,14 +47,19 @@ Chaque Défi contient deux sections. Il faut les compléter pour réussir chaque
 Votre rendu sera une archive `zip` ou `tar.gz` contenant, **pour chaque Défi** :
 - Dans le cas où seules des commandes étaient utiles à la réalisation du Défi, un fichier contenant ligne par ligne les commandes que vous avez exécutées pour réussir le Contenu.
 - Les fichiers de configuration que vous avez appliqués pour réussir un Défi. *Dans le cas où des fichiers de configurations ont été utilisés, il n'est pas nécessaire de repréciser les commandes que vous avez exécutées pour les appliquer.*
-- Un schéma d'infrastructure représentant tous les composants réseau participant au fonctionnement du service.
+- Un schéma d'infrastructure représentant tous les composants réseau participant au fonctionnement du service. *Référez-vous aux les présentations et n'hésitez pas à poser des questions si vous avez des doutes sur certains points !*
 - Les réponses aux questions de chaque Défi.
 
 Pour la soutenance, vous devez laisser sur le cluster du cours et dans votre espace de noms tous les déploiements que vous avez fait. **Ne les supprimez pas après avoir rendu l'archive !!**
+Le jour de la soutenance :
+- **Venez 15mn avant l'horaire de passage, avec l'ordinateur prêt à présenter.**
+- Annoncez le dernier Défi réalisé.
+
+On espère que cette partie va vous plaire, et vous donner des idées plus claire sur la puissance de ce super outil qu'est Kubernetes !
 
 ## Premiers pas sur Kubernetes (Défi 1)
 
-### Consignes
+### Contenu
 Tout d'abord, nous allons lancer un premier Pod, qui contiendra simplement un site web affichant une page.
 
 Un Pod, c'est plus ou moins la version Kubernetes d'un conteneur de Docker.
@@ -64,7 +69,6 @@ Un Pod, c'est plus ou moins la version Kubernetes d'un conteneur de Docker.
 ```
 kubectl create deployment [Nom du Deployment] --image=[chemin/vers/l'image/sur/Docker/Hub:tag]
 ```
-- Pour faire simple, un Deployment, c'est un peu comme le fichier `docker-compose` vu pendant la première partie de ce cours, sauf que ça n'est dédié au déploiement que d'un seul service à la fois.
 - Pour récupérer des images, il est possible de les publier sur [Docker Hub](https://hub.docker.com). Celle que nous allons utiliser se trouve à l'adresse https://hub.docker.com/xhelozs/csc8567. Elle porte le tag "v1".
 - Les informations sur la construction de l'image sont disponibles dans le dossier `csc8567-web-nodb` de ce même répo.
 - Comparez votre objectif à la documentation pour réussir à créer le Pod : [votre premier Deployment](https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/).
@@ -72,21 +76,66 @@ kubectl create deployment [Nom du Deployment] --image=[chemin/vers/l'image/sur/D
 ```
 kubectl port-foward pods/[Nom du Pod] [Port localhost]:[Port du Pod]
 ```
-Alors, le site devrait être visible depuis `localhost:[Port localhost]`. Si c'est bon, passez à la suite !
+Alors, le site devrait être visible depuis `localhost:[Port localhost]`. Si c'est le cas, vous avez complété ce Contenu avec succès !
 
-## Deuxièmes pas sur Kubernetes (ça se dit pas ?) (Défi 2)
+### Questions
 
-Sur Kubernetes, il existe différents types de Services :
+## Deuxièmes pas sur Kubernetes (ça ne se dit pas ?) (Défi 2)
+
+### Contenu
+```
+On souhaite faire :
+- Ecriture d'un Deployment dans lequel :
+    - Deployement de l'image xhelozs/csc8567:v1
+    - Création d'un NodePort pour accéder au pod de webnodb
+    - Accès au site via Proxy (http://127.0.0.1:8001/api/v1/namespaces/__your_namespace_name__/services/__your_service_name__/proxy/) !! ATTENTION PEUT ETRE "v3" AU LIEU DE "v1"
+```
+### Questions
+Sur Kubernetes, il existe cinqdifférents types de Services :
  - ClusterIP
  - NodePort
  - ExternalName
  - LoadBalancer
  - Headless
+1. Quel est le but d'un service ?
+2. Quelle est la différence entre les service ClusterIP et NodePort ?
 
-On souhaite 
-Ecriture d'un Deployment
-Création d'un ClusterIP pour le pod de webnodb
-Création d'un NodePort pour accéder au pod de webnodb
-
-
-## 
+## Connexions dangereuses (Défi 3)
+### Contenu
+```
+Déployer le site Django sans la séparation des Apps avec une BDD (un Deployment + NodePort/ClusterIP pour web/db, pas de Persistent Volume/Stateful Set pour le moment)
+Utilisation de leur image Django + image Postgres
+```
+### Questions
+## Internet ! Me voilà ! (Défi 4)
+### Contenu
+```
+Création d'un Ingress pour accéder au site.
+ATTENTION À VERIFIER LES CONFIGURATIONS AVANT D'APPLIQUER !! (?)
+```
+### Questions
+## Au complet ! (Défi 5)
+```
+Modification de l'Ingress et des Deployments pour avoir une infra équivalente à l'infra finale de la partie Docker.
+```
+## Quelqu'un a dit "HELM" ? (Défi 6)
+### Contenu
+```
+Automatisation du déploiement de la totalité de l'infra avec une charte Helm
+```
+**À PARTIR DE CE CHALLENGE, SAUF MENTION CONTRAIRE, VOUS DEVEZ METTRE À JOUR VOTRE CHARTE POUR CHAQUE NOUVEL AJOUT OU NOUVELLE MODIFICATION À VOTRE INFRASTRUCTURE !!**
+### Questions
+## Connexions moins dangereuses (Défi 7)
+On veut stocker des données, non ? Pas très pratique si on les perd dès que le Pod contenant la base de donnée s'éteint ou crashe !
+StatefulSet & Persistent Volume
+## La scalabili-quoi ?! (Défi 8)
+Créez un nouveau Deployment qui créer/supprimer des Pods de réplication d'API ou de Front en fonction d'un taux de CPU utilisé par le Pod.
+## Connexions peu dangereuses (Défi 9)
+Créez un Network policy pour n'autoriser que les connexions provenant des Pods type API
+## Connexions robustes (Défi 10)
+Déployez une structure type Master/Slave pour votre base de données Postgres.
+Vous n'avez pas le droit d'utiliser une charte Helm pré-faite pour ce Défi.
+Vous n'avez pas besoin de mettre à jour votre charte Helm pour réussir ce défi.
+## Connexions robustes & automatisées (Défi 11 [ULTIME])
+Ecrivez une charte Helm automatisant le déploiement d'une structure type Master/Slave pour votre base de données Postgres.
+Incluez cette charte à votre charte globale.
