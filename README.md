@@ -51,6 +51,7 @@ Votre rendu sera une archive `zip` ou `tar.gz` contenant, **pour chaque Défi** 
 - Les réponses aux questions de chaque Défi.
 
 Pour la soutenance, vous devez laisser sur le cluster du cours et dans votre espace de noms tous les déploiements que vous avez fait. **Ne les supprimez pas après avoir rendu l'archive !!**
+
 Le jour de la soutenance :
 - **Venez 15mn avant l'horaire de passage, avec l'ordinateur prêt à présenter.**
 - Annoncez le dernier Défi réalisé.
@@ -91,7 +92,7 @@ On souhaite faire :
     - Accès au site via Proxy (http://127.0.0.1:8001/api/v1/namespaces/__your_namespace_name__/services/__your_service_name__/proxy/) !! ATTENTION PEUT ETRE "v3" AU LIEU DE "v1"
 ```
 ### Questions
-Sur Kubernetes, il existe cinqdifférents types de Services :
+Sur Kubernetes, il existe cinq différents types de Services :
  - ClusterIP
  - NodePort
  - ExternalName
