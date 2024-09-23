@@ -133,7 +133,7 @@ StatefulSet & Persistent Volume
 ## La scalabili-quoi ?! (Défi 8)
 Créez un nouveau Deployment qui créer/supprimer des Pods de réplication d'API ou de Front en fonction d'un taux de CPU utilisé par le Pod.
 ## Connexions peu dangereuses (Défi 9)
-Créez un Network policy pour n'autoriser que les connexions provenant des Pods type API
+Créez un Network policy pour n'autoriser que les connexions provenant des Pods type Front & API sur la BDD
 ## Connexions robustes (Défi 10)
 Déployez une structure type Master/Slave pour votre base de données Postgres.
 Vous n'avez pas le droit d'utiliser une charte Helm pré-faite pour ce Défi.
