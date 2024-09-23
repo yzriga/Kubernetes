@@ -20,7 +20,7 @@ Venez ensuite voir un professeur : donnez la composition de votre groupe. Un nam
 
 Une fois votre compte créé, [connectez-vous au site de gestion du cluster](https://kube.luxbulb.org) avec vos identifiants, et créez vous un mot de passe personnel. Allez ensuite dans la rubrique "Cluster Management". Sélectionnez le cluster "csc8567", et cliquez sur "Download KubeConfig". Déplacez le fichier téléchargé à l'adresse `~/.kube/config` (`config` n'est pas un répertoire, c'est bien le fichier de configuration que vous avez téléchargé : il faut le renommer).
 
-Essayez la commande dans un terminal :
+Essayez la commande dans un terminal (en remplaçant le "X" par votre numéro de groupe) :
 ```
 kubectl cluster-info -n groupe-X
 ```
