@@ -26,6 +26,7 @@ Pour cette partie du cours, vous aurez besoin d'installer le programme `kubectl`
 kubectl cluster-info -n groupe-X
 ```
 *Pour info, la notion `-n groupe-X` permet de préciser que la commande est exécutée dans l'espace de noms "groupe-X". Sans la mention de ce dernier, elle serait exécutée dans le namespace "default", auquel vous n'avez pas accès. Probablement une info utile pour la suite !*
+
 Ceci devrait vous afficher une sortie :
 ```
 Kubernetes control plane is running at https://kube.luxbulb.org/k8s/clusters/local
