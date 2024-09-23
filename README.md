@@ -36,10 +36,25 @@ Si vous avez une erreur, allez voir un professeur.
 
 ## Premiers pas sur Kubernetes
 
-Création d'un deployment pour un site web de base (type webnodb)
+Tout d'abord, nous allons lancer un premier Pod, qui contiendra simplement un site web affichant une page.
+Un Pod, c'est plus ou moins la version Kubernetes d'un conteneur de Docker.
+- Pour créer ce Pod, il faut créer un Deployment et préciser l'image (Docker en l'occurence) utilisée pour créer le Deployment.
+-> Pour faire simple, un Deployment, c'est un peu comme le fichier `docker-compose.yml` vu pendant la première partie de ce cours.
+- Pour récupérer des images, il est possible de les publier sur [Docker Hub](https://hub.docker.com). Celle que nous allons utiliser se trouve à l'adresse https://hub.docker.com/xhelozs/csc8567. Elle porte le tag "v1".
+-> Le site tourne sur le port 5000 du Pod ainsi créé.
+
+- Comparez votre objectif à la documentation pour réussir à créer le Pod : [votre premier Deployment](https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/).
+
+- Ensuite, nous allons utiliser le `port-forward` permis par Kubernetes pour mapper le port 5000 du Pod du site sur un port de notre interface `localhost`.
+```
+kubectl port-foward pods/[Nom du Pod] [Port localhost]:[Port du Pod] -n groupe-X
+```
+
+Alors, le site devrait être visible depuis `localhost:[Port localhost]`. Si c'est bon, passez à la suite !
 
 ## Exposer son site
 
 Création d'un NodePort pour accéder à webnodb
+Ecriture d'un Deployment pour déployer les 2 en même temps
 
 ## 
