@@ -10,6 +10,7 @@
 - Timothée Mathubert (timothee.mathubert@telecom-sudparis.eu)
 - Gatien Roujanski (gatien.roujanski@telecom-sudparis.eu)
 - Arthur Jovart (arthur.jovart@telecom-sudparis.eu)
+- (Inspirations du cours NET4255 de Vincent Gauthier & Gatien Roujanski)
 
 ## Démarrage des projets
 
