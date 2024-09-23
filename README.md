@@ -18,7 +18,9 @@ Veuillez suivre les instructions disponibles sur ce [tuto d'installation de `kub
 
 Venez ensuite voir un professeur : donnez la composition de votre groupe. Un namespace vous sera alors créé sur le cluster du cours (`groupe-X` où X est le numéro de votre groupe). Un compte vous sera aussi créé sur le cluster.
 
-Une fois votre compte créé, [connectez-vous au site de gestion du cluster](https://kube.luxbulb.org) avec vos identifiants, et créez vous un mot de passe personnel. Allez ensuite dans la rubrique "Cluster Management". Sélectionnez le cluster "csc8567", et cliquez sur "Download KubeConfig". Déplacez le fichier téléchargé à l'adresse `~/.kube/config` (`config` n'est pas un répertoire, c'est bien le fichier de configuration que vous avez téléchargé : il faut le renommer).
+Une fois votre compte créé, [connectez-vous au site de gestion du cluster](https://kube.luxbulb.org) avec vos identifiants, et créez vous un mot de passe personnel. Allez ensuite dans la rubrique "Cluster Management". 
+
+Sélectionnez le cluster "csc8567", et cliquez sur "Download KubeConfig". Déplacez le fichier téléchargé à l'adresse `~/.kube/config` (`config` n'est pas un répertoire, c'est bien le fichier de configuration que vous avez téléchargé : il faut le renommer).
 
 Essayez la commande dans un terminal (en remplaçant le "X" par votre numéro de groupe) :
 ```
