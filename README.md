@@ -24,6 +24,7 @@ Pour cette partie du cours, vous aurez besoin d'installer le programme `kubectl`
 ```
 kubectl cluster-info -n groupe-X
 ```
+*Pour info, la notion `-n groupe-X` permet de préciser que la commande est exécutée dans le namespace "groupe-X". Sans la mention du namespace, elle serait exécutée dans le namespace "default", auquel vous n'avez pas accès.*
 Ceci devrait vous afficher une sortie :
 ```
 Kubernetes control plane is running at https://kube.luxbulb.org/k8s/clusters/local
@@ -32,3 +33,13 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 ```
 Si vous avez une erreur, allez voir un professeur.
 8. Une fois que la dernière commande à fonctionné, vous êtes fin prêts pour démarrer le projet !
+
+## Premiers pas sur Kubernetes
+
+Création d'un deployment pour un site web de base (type webnodb)
+
+## Exposer son site
+
+Création d'un NodePort pour accéder à webnodb
+
+## 
