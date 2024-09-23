@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/3ba5a526-c617-49c7-8165-30c3f3505d5c" width="300" alt="TSP logo">
+</p>
+
 # CSC8567-Kube
 Template de répo pour le projet Kubernetes de CSC8567 (Projet final)
 
