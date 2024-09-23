@@ -7,9 +7,9 @@
 
 ## Auteurs
 
-Timothée Mathubert (timothee.mathubert@telecom-sudparis.eu)
-Gatien Roujanski (gatien.roujanski@telecom-sudparis.eu)
-Arthur Jovart (arthur.jovart@telecom-sudparis.eu)
+- Timothée Mathubert (timothee.mathubert@telecom-sudparis.eu)
+- Gatien Roujanski (gatien.roujanski@telecom-sudparis.eu)
+- Arthur Jovart (arthur.jovart@telecom-sudparis.eu)
 
 ## Démarrage des projets
 
