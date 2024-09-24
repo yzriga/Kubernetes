@@ -209,18 +209,6 @@ Si vous avez réussi le Défi précédent, allez voir un professeur pour qu'il v
 
 **???**
 
-## La scalabili-quoi ?! (Défi 8)
-
-**???**
-
-## Connexions peu dangereuses (Défi 9)
-
-**???**
-
-## Connexions robustes (Défi 10)
-
-**???**
-
-## **???** (Défi 11 [ULTIME])
+## **???** (Défi 8)
 
 **???**
