@@ -63,6 +63,13 @@ Le jour de la soutenance :
 
 On espère que cette partie va vous plaire, et vous donner des idées plus claire sur la puissance de ce super outil qu'est Kubernetes !
 
+## Conseils de travail en groupe
+
+- Créez-vous un répo Git commun dans lequel vous allez travailler ensemble. Vous pourrez plus facilement suivre l'avancement des uns et des autres.
+- Lorsque vous avancez dans votre travail, créez de nouvelles branches. Une fois que vous avez terminé, faites des Pull Requests.
+- Commentez fréquement vos fichiers de code et de configuration pour les rendre plus clairs pour vos équipiers ou équipières.
+- Communiquez !!
+
 ## Premiers pas sur Kubernetes (Défi 1)
 
 ### Contenu
