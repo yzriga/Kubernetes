@@ -12,6 +12,25 @@
 - Arthur Jovart (arthur.jovart@telecom-sudparis.eu)
 - (Inspirations du cours NET4255 de Vincent Gauthier & Gatien Roujanski)
 
+## Présentation du projet Kubernetes
+
+C'est le moment d'attaquer Kubernetes !
+
+Pour venir à bout de votre projet, les règles sont un peu différentes que lors de la première partie du cours.
+
+Il vous faudra compléter des Défis. Compléter des Défis vous rapporte des points. Pour compléter un défi, il faut :
+- Compléter le Contenu, expliquant les tâches à réaliser pour le Défi.
+- Esquisser un schéma de l'infrastructure réseau complète mise en jeu lors de la réalisation du Contenu.
+- Répondre aux Questions lorsqu'il y en a.
+
+Pour compléter un Défi, il faut aller le faire valider auprès d'un professeur (Timothée ou Gatien), en faisant une petite démo montrant ce que vous avez fait, et en expliquant le schéma que vous avez réalisé.
+
+Lorsque votre Défi est validé, vous pouvez passer au Défi suivant.
+
+À partir du Défi 6, les premiers groupes ayant complété un Défi révèleront à tout le monde le Défi suivant. Considérez que si vous en arrivez à ces Défis là, vous vous débrouillez très bien !
+
+Bon courage !
+
 ## Démarrage des projets
 
 Pour cette partie du cours, vous aurez besoin d'installer le programme `kubectl`.
@@ -69,6 +88,8 @@ On espère que cette partie va vous plaire, et vous donner des idées plus clair
 - Lorsque vous avancez dans votre travail, créez de nouvelles branches. Une fois que vous avez terminé, faites des Pull Requests.
 - Commentez fréquement vos fichiers de code et de configuration pour les rendre plus clairs pour vos équipiers ou équipières.
 - Communiquez !!
+
+# Les Défis
 
 ## Premiers pas sur Kubernetes (Défi 1)
 
