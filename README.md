@@ -27,7 +27,7 @@ Pour compléter un Défi, il faut aller le faire valider auprès d'un professeur
 
 Lorsque votre Défi est validé, vous pouvez passer au Défi suivant.
 
-À partir du Défi 6, les premiers groupes ayant complété un Défi révèleront à tout le monde le Défi suivant. Considérez que si vous en arrivez à ces Défis là, vous vous débrouillez très bien !
+À partir du Défi 6, les premiers groupes ayant complété un Défi révèleront à tout le monde le Défi suivant. Considérez que lorsque vous arrivez à ces Défis là, vous vous débrouillez bien !
 
 Bon courage !
 
