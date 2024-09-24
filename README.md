@@ -55,21 +55,19 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 Si vous avez une erreur, allez voir un professeur pour résoudre le problème.
 8. Une fois que la dernière commande à fonctionné, vous êtes fin prêts pour démarrer le projet !
 
-## Modalités de rendu & soutenance
+## Modalités de rendu du Projet & soutenance
 
 Vous êtes répartis en groupes de 2 ou 3 personnes, et vous partagez l'espace de noms associé à votre groupe.
 Le rendu final sera commun au membres du groupe : une seule personne du groupe le rendra sur Moodle, et précisera les noms des membres du groupe.
-La note se basera sur votre avancée dans les **Défis** listés ci-après.
-
-Chaque Défi contient deux sections. Il faut les compléter pour réussir chaque Défi.
-- Contenu : les tâches à réaliser.
-- Questions : les questions auxquelles il faut répondre.
+La note du Projet se basera sur votre avancée dans les **Défis** listés ci-après.
 
 Votre rendu sera une archive `zip` ou `tar.gz` contenant, **pour chaque Défi** :
 - Dans le cas où seules des commandes étaient utiles à la réalisation du Défi, un fichier contenant ligne par ligne les commandes que vous avez exécutées pour réussir le Contenu.
 - Les fichiers de configuration que vous avez appliqués pour réussir un Défi. *Dans le cas où des fichiers de configurations ont été utilisés, il n'est pas nécessaire de repréciser les commandes que vous avez exécutées pour les appliquer.*
 - Un schéma d'infrastructure représentant tous les composants réseau participant au fonctionnement du service. *Référez-vous aux les présentations et n'hésitez pas à poser des questions si vous avez des doutes sur certains points !*
 - Les réponses aux questions de chaque Défi.
+
+Chaque contenu de rendu de Défi sera dans un dossier séparé dans l'archive (`defi1`,`defi2`,...).
 
 Pour la soutenance, vous devez laisser sur le cluster du cours et dans votre espace de noms tous les déploiements que vous avez fait. **Ne les supprimez pas après avoir rendu l'archive !!**
 
