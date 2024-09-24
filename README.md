@@ -83,62 +83,149 @@ Alors, le site devrait être visible depuis `localhost:[Port localhost]`. Si c'e
 
 ### Questions
 
+Le schéma déjà ça sera bien ! Venez voir un prof quand vous (pensez) l'avoir fini.
+
 ## Deuxièmes pas sur Kubernetes (ça ne se dit pas ?) (Défi 2)
 
 ### Contenu
+
+Bon, on a déployé un Pod, c'est sympa, mais ça nous avance pas beaucoup de Docker, c'est même plus compliqué...
+
+Vous en faites pas : on va compliquer encore un peu plus les choses !
+
+Vous allez créer maintenant votre premier Deployment, pour l'image `csc8567` utilisée lors du dernier Défi.
+
+**Votre Deployment créera 3 répliques du Pod faisant tourner le site.**
+
+Pour ce faire, il va falloir comprendre ce qu'est un Deployment, comment ça se configure. Pour ceci, vous pouvez visionner [cette vidéo](https://youtu.be/qmDzcu5uY1I?si=jeoMTcyKxxQ70jmG).
+
+Ensuite, le soucis précédent va se réitérer : il faut trouver un moyen d'accéder au service. On va utiliser pour ça une combinaison gagnante : un service NodePort + un proxy.
+
+Deux ressources sont alors intéréssantes à parcourir pour mieux comprendre :
+- [Accéder à des services qui tournent sur le Cluster](https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster-services/)
+- [Construire des URLs personnalisés sur l'API](https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster-services/#manually-constructing-apiserver-proxy-urls)
+
+Ensuite, on souhaite allouer des ressources particulières à chaque Pod du Deployment. En particulier :
+- 1/10 CPU par pod 
+- 100 Mo de mémoire RAM par pod
+En revanche, on veut aussi limiter les ressources à :
+- 1/5 CPU par pod
+- 200 Mo de mémoire RAM par pod
+
+Cette ressource va vous aider à arriver à vous fins :
+- [Resource Management for Pods and Containers](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)
+
+Vous pourrez alors vous connecter à votre service via le proxy :
+```bash
+kubectl proxy
 ```
-On souhaite faire :
-- Ecriture d'un Deployment dans lequel :
-    - Deployement de l'image xhelozs/csc8567:v1
-    - Création d'un NodePort pour accéder au pod de webnodb
-    - Accès au site via Proxy (http://127.0.0.1:8001/api/v1/namespaces/__your_namespace_name__/services/__your_service_name__/proxy/) !! ATTENTION PEUT ETRE "v3" AU LIEU DE "v1"
-```
+Votre service devrait alors être disponible à l'adresse : 
+`http://127.0.0.1:8001/api/v1/namespaces/[votre espace de noms]/services/[nom de votre service]/proxy/`
+
 ### Questions
-Sur Kubernetes, il existe cinq différents types de Services :
- - ClusterIP
- - NodePort
- - ExternalName
- - LoadBalancer
- - Headless
 1. Quel est le but d'un service ?
 2. Quelle est la différence entre les service ClusterIP et NodePort ?
+3. Et le schéma !!
 
 ## Connexions dangereuses (Défi 3)
 ### Contenu
+Pas mal ! Maintenant l'étape suivante : on va reprendre votre projet Django.
+
+Avant tout, vous aller le copier, et faire en sorte que **le site soit contenu avec les deux apps (public et api) dans une image Docker**, que vous allez publier sur [Docker Hub](https://hub.docker.com).
+
+Utilisez un Deployment pour déployer votre site Django similairement à celui créé précédemment.
+
+Sauf que c'est pas fini cette fois ! Vous allez aussi créer un autre Deployment, pour déployer la base de données Postgresql. Le service que vous utiliserez est un ClusterIP.
 ```
 Déployer le site Django sans la séparation des Apps avec une BDD (un Deployment + NodePort/ClusterIP pour web/db, pas de Persistent Volume/Stateful Set pour le moment)
 Utilisation de leur image Django + image Postgres
 ```
+Et un peu plus de documentation pour comprendre comment faire !
+
+- [Connecter des Applications avec des Services](https://kubernetes.io/docs/tutorials/services/connect-applications-service/)
+
 ### Questions
+
+- Pourquoi utilise-t-on un service type NodePort pour le site Django et un service type ClusterIP pour la base de données ?
+- Quelle critique pouvez-vous donner vis-à-vis de l'utilisation de Pods pour la base de données ?
+- Le schéma !
+
 ## Internet ! Me voilà ! (Défi 4)
 ### Contenu
+Vraiment pas mal !
+
+Maintenant, on va faire en sorte que votre site soit accessible depuis Internet. Plus partique pour un site web, non ?
+
+Vous allez donc créer ce que l'on appelle un Ingress.
+
+Le but, c'est que votre site devienne accessible à l'adresse http://django.votre_espace_de_noms.kube.luxbulb.org/
+
+Ici, des [généralités sur les Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).
 ```
 Création d'un Ingress pour accéder au site.
 ATTENTION À VERIFIER LES CONFIGURATIONS AVANT D'APPLIQUER !! (?)
 ```
 ### Questions
+
+On met à jour le schéma, ça suffira !
+
 ## Au complet ! (Défi 5)
+### Contenu
+
+C'est enfin le moment : on va reproduire l'infrastructure qu'on avait sur Docker, mais version (presque) Kubernetes !
+
+Pour récapituler, il faut que :
+- Vous ayez deux images Docker permettant de faire tourner séparément les applications API et Public (ou l'équivalent de votre projet)
+- Vous faites tourner ces deux images dans des Deployments (3 pods répliqués, même allocations/limitations de ressources qu'au Défi 2), derrière des services bien choisis
+- Vous faites tourner la base de données via un Deployement (3 pods répliqués, allocations/limitations idem que pour API et Public), derrière un service bien choisi
+- Vous utilisez l'Ingress pour diriger les requêtes (l'Ingress vient remplacer votre proxy Nginx de Docker)
+
+Pas plus de documentation pour cette fois ! Vous avez déjà tout ce qu'il vous faut.
 ```
 Modification de l'Ingress et des Deployments pour avoir une infra équivalente à l'infra finale de la partie Docker.
 ```
-## Quelqu'un a dit "HELM" ? (Défi 6)
-### Contenu
-```
-Automatisation du déploiement de la totalité de l'infra avec une charte Helm
-```
-**À PARTIR DE CE CHALLENGE, SAUF MENTION CONTRAIRE, VOUS DEVEZ METTRE À JOUR VOTRE CHARTE POUR CHAQUE NOUVEL AJOUT OU NOUVELLE MODIFICATION À VOTRE INFRASTRUCTURE !!**
+
 ### Questions
+
+Un beau schéma !
+
+## Quelqu'un a dit "HELM" ?! (Défi 6)
+
+### Contenu
+
+Vous vous souvenez de docker compose ? Eh bien on a un peu l'équivalent sur Kubernetes : Helm, et surtout les chartes Helm.
+
+L'objectif est de créer une charte Helm qui automatise le déploiement de l'infrastructure que vous avez mise en oeuvre au Défi précédent.
+
+Également, vous aller utiliser ConfigMaps pour stocker les informations de nom d'hôte et de port de la base de données.
+
+Cette fois, on a de la doc à vous partager pour tout ça :
+
+- [Bien débuter avec Helm](https://helm.sh/docs/chart_template_guide/getting_started/)
+- [Utiliser ConfigMaps dans Kubernetes](https://kubernetes.io/docs/concepts/configuration/configmap/)
+
+### Questions
+
+Rien ! Une belle charte Helm fera amplement l'affaire.
+
+**À PARTIR DE CE DÉFI, SAUF MENTION CONTRAIRE, VOUS DEVEZ METTRE À JOUR VOTRE CHARTE HELM POUR CHAQUE NOUVEL AJOUT OU NOUVELLE MODIFICATION À VOTRE INFRASTRUCTURE !!**
+
 ## Connexions moins dangereuses (Défi 7)
-On veut stocker des données, non ? Pas très pratique si on les perd dès que le Pod contenant la base de donnée s'éteint ou crashe !
-StatefulSet & Persistent Volume
+
+**???**
+
 ## La scalabili-quoi ?! (Défi 8)
-Créez un nouveau Deployment qui créer/supprimer des Pods de réplication d'API ou de Front en fonction d'un taux de CPU utilisé par le Pod.
+
+**???**
+
 ## Connexions peu dangereuses (Défi 9)
-Créez un Network policy pour n'autoriser que les connexions provenant des Pods type Front & API sur la BDD
+
+**???**
+
 ## Connexions robustes (Défi 10)
-Déployez une structure type Master/Slave pour votre base de données Postgres.
-Vous n'avez pas le droit d'utiliser une charte Helm pré-faite pour ce Défi.
-Vous n'avez pas besoin de mettre à jour votre charte Helm pour réussir ce défi.
-## Connexions robustes & automatisées (Défi 11 [ULTIME])
-Ecrivez une charte Helm automatisant le déploiement d'une structure type Master/Slave pour votre base de données Postgres.
-Incluez cette charte à votre charte globale.
+
+**???**
+
+## **???** (Défi 11 [ULTIME])
+
+**???**
