@@ -205,7 +205,7 @@ Rien ! Une belle charte Helm fera amplement l'affaire.
 
 ## Connexions moins dangereuses (Défi 7)
 
-Si vous avez réussi le Défi précédent, allez voir un professeur pour qu'il valide votre réussite et révèle le défi suivant
+Si vous avez réussi le Défi précédent, allez voir un professeur pour qu'il valide votre réussite et révèle ce défi.
 
 **???**
 
