@@ -136,10 +136,7 @@ Avant tout, vous aller le copier, et faire en sorte que **le site soit contenu a
 Utilisez un Deployment pour déployer votre site Django similairement à celui créé précédemment.
 
 Sauf que c'est pas fini cette fois ! Vous allez aussi créer un autre Deployment, pour déployer la base de données Postgresql. Le service que vous utiliserez est un ClusterIP.
-```
-Déployer le site Django sans la séparation des Apps avec une BDD (un Deployment + NodePort/ClusterIP pour web/db, pas de Persistent Volume/Stateful Set pour le moment)
-Utilisation de leur image Django + image Postgres
-```
+
 Et un peu plus de documentation pour comprendre comment faire !
 
 - [Connecter des Applications avec des Services](https://kubernetes.io/docs/tutorials/services/connect-applications-service/)
@@ -161,10 +158,7 @@ Vous allez donc créer ce que l'on appelle un Ingress.
 Le but, c'est que votre site devienne accessible à l'adresse http://django.votre_espace_de_noms.kube.luxbulb.org/
 
 Ici, des [généralités sur les Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).
-```
-Création d'un Ingress pour accéder au site.
-ATTENTION À VERIFIER LES CONFIGURATIONS AVANT D'APPLIQUER !! (?)
-```
+
 ### Questions
 
 On met à jour le schéma, ça suffira !
@@ -181,9 +175,6 @@ Pour récapituler, il faut que :
 - Vous utilisez l'Ingress pour diriger les requêtes (l'Ingress vient remplacer votre proxy Nginx de Docker)
 
 Pas plus de documentation pour cette fois ! Vous avez déjà tout ce qu'il vous faut.
-```
-Modification de l'Ingress et des Deployments pour avoir une infra équivalente à l'infra finale de la partie Docker.
-```
 
 ### Questions
 
@@ -210,7 +201,11 @@ Rien ! Une belle charte Helm fera amplement l'affaire.
 
 **À PARTIR DE CE DÉFI, SAUF MENTION CONTRAIRE, VOUS DEVEZ METTRE À JOUR VOTRE CHARTE HELM POUR CHAQUE NOUVEL AJOUT OU NOUVELLE MODIFICATION À VOTRE INFRASTRUCTURE !!**
 
+
+
 ## Connexions moins dangereuses (Défi 7)
+
+Si vous avez réussi le Défi précédent, allez voir un professeur pour qu'il valide votre réussite et révèle le défi suivant
 
 **???**
 
