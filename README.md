@@ -57,6 +57,9 @@ Pour la soutenance, vous devez laisser sur le cluster du cours et dans votre esp
 Le jour de la soutenance :
 - **Venez 15mn avant l'horaire de passage, avec l'ordinateur prêt à présenter.**
 - Annoncez le dernier Défi réalisé.
+- Les deux premiers tiers de votre présentation serviront à présenter votre projet final (fonctionnalités web et infrastructure sur le cluster Kubernetes du cours).
+- Le dernier tiers sera réservé aux questions.
+- Chaque soutenance durera 15 minutes.
 
 On espère que cette partie va vous plaire, et vous donner des idées plus claire sur la puissance de ce super outil qu'est Kubernetes !
 
