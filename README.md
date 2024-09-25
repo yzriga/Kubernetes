@@ -101,7 +101,7 @@ Un Pod, c'est plus ou moins la version Kubernetes d'un conteneur de Docker.
 ```
 kubectl create deployment [Nom du Deployment] --image=[chemin/vers/l'image/sur/Docker/Hub:tag]
 ```
-- Pour récupérer des images, il est possible de les publier sur [Docker Hub](https://hub.docker.com). Celle que nous allons utiliser se trouve à l'adresse https://hub.docker.com/xhelozs/csc8567. Elle porte le tag "v1".
+- Pour récupérer des images, il est possible de les publier sur [Docker Hub](https://hub.docker.com). Celle que nous allons utiliser se trouve [ici](https://hub.docker.com/r/xhelozs/csc8567). Elle porte le tag "v1".
 - Les informations sur la construction de l'image sont disponibles dans le dossier `csc8567-web-nodb` de ce même répo.
 - Comparez votre objectif à la documentation pour réussir à créer le Pod : [votre premier Deployment](https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/).
 - Ensuite, nous allons utiliser le `port-forward` permis par Kubernetes pour mapper le port du Pod du site sur un port de notre interface `localhost`.
