@@ -51,7 +51,7 @@ mv ~/Téléchargements/csc8567-rke2.yaml ~/.kube/config
 ```
 kubectl cluster-info -n u-XXX
 ```
-*Pour info, la notion `-n u-XXX` permet de préciser que la commande est exécutée dans l'espace de noms "groupe-X". Sans la mention de ce dernier, elle serait exécutée dans le namespace "default", auquel vous n'avez pas accès. Probablement une info utile pour la suite !*
+*Pour info, la notion `-n u-XXX` permet de préciser que la commande est exécutée dans l'espace de noms "u-XXX". Sans la mention de ce dernier, elle serait exécutée dans le namespace "default", auquel vous n'avez pas accès. Probablement une info utile pour la suite !*
 
 Ceci devrait vous afficher une sortie :
 ```
@@ -113,7 +113,7 @@ kubectl create deployment [Nom du Deployment] --image=[chemin/vers/l'image/sur/D
 - Comparez votre objectif à la documentation pour réussir à créer le Pod : [votre premier Deployment](https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/).
 - Ensuite, nous allons utiliser le `port-forward` permis par Kubernetes pour mapper le port du Pod du site sur un port de notre interface `localhost`.
 ```
-kubectl port-foward pods/[Nom du Pod] [Port localhost]:[Port du Pod]
+kubectl port-forward pods/[Nom du Pod] [Port localhost]:[Port du Pod]
 ```
 Alors, le site devrait être visible depuis `localhost:[Port localhost]`. Si c'est le cas, vous avez complété ce Contenu avec succès !
 
