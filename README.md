@@ -39,12 +39,19 @@ Pour cette partie du cours, vous aurez besoin d'installer le programme `kubectl`
 3. Une fois votre compte créé, [connectez-vous au site de gestion du cluster](https://rancher.luxbulb.org) avec vos identifiants, et créez vous un mot de passe personnel.
 4. Allez ensuite dans la rubrique "Cluster Management". 
 5. Sélectionnez le cluster "csc8567", et cliquez sur "Download KubeConfig".
-6. Déplacez le fichier téléchargé à l'adresse `~/.kube/config` (`config` n'est pas un répertoire, c'est bien le fichier de configuration que vous avez téléchargé : il faut le renommer).
-7. Essayez la commande dans un terminal (en remplaçant le "X" par votre numéro de groupe) :
+6. Créez un dossier `.kube` dans votre dossier Home :
 ```
-kubectl cluster-info -n groupe-X
+mkdir ~/.kube
 ```
-*Pour info, la notion `-n groupe-X` permet de préciser que la commande est exécutée dans l'espace de noms "groupe-X". Sans la mention de ce dernier, elle serait exécutée dans le namespace "default", auquel vous n'avez pas accès. Probablement une info utile pour la suite !*
+7. Déplacez le fichier téléchargé à l'adresse `~/.kube/config`:
+```
+mv ~/Téléchargements/csc8567-rke2.yaml ~/.kube/config
+```
+8. Essayez la commande dans un terminal (en remplaçant le "u-XXX" par votre ID d'utilisateur/espace de noms) :
+```
+kubectl cluster-info -n u-XXX
+```
+*Pour info, la notion `-n u-XXX` permet de préciser que la commande est exécutée dans l'espace de noms "groupe-X". Sans la mention de ce dernier, elle serait exécutée dans le namespace "default", auquel vous n'avez pas accès. Probablement une info utile pour la suite !*
 
 Ceci devrait vous afficher une sortie :
 ```
