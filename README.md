@@ -117,6 +117,11 @@ kubectl port-forward pods/[Nom du Pod] [Port localhost]:[Port du Pod]
 ```
 Alors, le site devrait être visible depuis `localhost:[Port localhost]`. Si c'est le cas, vous avez complété ce Contenu avec succès !
 
+Petite commande supplémentaire qui pourrait vous aider en plus :
+```
+kubectl logs [Nom du Pod]
+```
+
 ### Questions
 
 Le schéma déjà ça sera bien ! Venez voir un prof quand vous (pensez) l'avoir fini.
