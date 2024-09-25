@@ -149,6 +149,7 @@ Deux ressources sont alors intéréssantes à parcourir pour mieux comprendre :
 Ensuite, on souhaite allouer des ressources particulières à chaque Pod du Deployment. En particulier :
 - 1/10 CPU par pod 
 - 100 Mo de mémoire RAM par pod
+
 En revanche, on veut aussi limiter les ressources à :
 - 1/5 CPU par pod
 - 200 Mo de mémoire RAM par pod
