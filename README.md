@@ -49,15 +49,13 @@ mv ~/Téléchargements/csc8567.yaml ~/.kube/config
 ```
 8. Essayez la commande dans un terminal (en remplaçant le "u-XXX" par votre ID d'utilisateur/espace de noms) :
 ```
-kubectl cluster-info -n u-XXX
+kubectl get pods -n u-XXX
 ```
 *Pour info, la notion `-n u-XXX` permet de préciser que la commande est exécutée dans l'espace de noms "u-XXX". Sans la mention de ce dernier, elle serait exécutée dans le namespace "default", auquel vous n'avez pas accès. Probablement une info utile pour la suite !*
 
 Ceci devrait vous afficher une sortie :
 ```
-Kubernetes control plane is running at https://kube.luxbulb.org/k8s/clusters/local
-
-To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+No resources found in u-XXX namespace.
 ```
 Si vous avez une erreur, allez voir un professeur pour résoudre le problème.
 8. Une fois que la dernière commande à fonctionné, vous êtes fin prêts pour démarrer le projet !
