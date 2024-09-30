@@ -45,7 +45,7 @@ mkdir ~/.kube
 ```
 7. Déplacez le fichier téléchargé à l'adresse `~/.kube/config`:
 ```
-mv ~/Téléchargements/csc8567-rke2.yaml ~/.kube/config
+mv ~/Téléchargements/csc8567.yaml ~/.kube/config
 ```
 8. Essayez la commande dans un terminal (en remplaçant le "u-XXX" par votre ID d'utilisateur/espace de noms) :
 ```
