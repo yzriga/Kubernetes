@@ -138,10 +138,10 @@ Vous allez créer maintenant votre premier Deployment, pour l'image `csc8567` ut
 
 Pour ce faire, il va falloir comprendre ce qu'est un Deployment, comment ça se configure. Pour ceci, vous pouvez visionner [cette vidéo](https://youtu.be/qmDzcu5uY1I?si=jeoMTcyKxxQ70jmG).
 
-Ensuite, le soucis précédent va se réitérer : il faut trouver un moyen d'accéder au service. On va utiliser pour ça une combinaison gagnante : un service NodePort + un proxy.
+Ensuite, le soucis précédent va se réitérer : il faut trouver un moyen d'accéder au service. On va utiliser pour ça une combinaison gagnante : un service ClusterIP + un proxy.
 
 Deux ressources sont alors intéréssantes à parcourir pour mieux comprendre :
-- [Accéder à des services qui tournent sur le Cluster](https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster-services/)
+- [Accéder à des services sur le Cluster](https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster-services/)
 - [Construire des URLs personnalisés sur l'API](https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster-services/#manually-constructing-apiserver-proxy-urls)
 
 Ensuite, on souhaite allouer des ressources particulières à chaque Pod du Deployment. En particulier :
