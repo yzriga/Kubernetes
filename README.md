@@ -168,11 +168,47 @@ Votre service devrait alors être disponible à l'adresse :
 3. Et le schéma !!
 
 ## Connexions dangereuses (Défi 3)
+### Contenu
+Pas mal ! Maintenant l'étape suivante : on va reprendre votre projet Django.
+
+Avant tout, vous aller le copier, et faire en sorte que **le site soit contenu avec les deux apps (public et api) dans une image Docker**, que vous allez publier sur [Docker Hub](https://hub.docker.com).
+
+**Utilisez un Deployment pour déployer votre site Django similairement à celui créé précédemment.**
+
+Sauf que c'est pas fini cette fois ! **Vous allez aussi créer un autre Deployment, contenant un unique Pod, pour déployer la base de données Postgresql. Le service que vous utiliserez est un ClusterIP.**
+
+**Quelques indices sur la procédure pour s'en sortir :**
+
+- Vous pouvez passer des variables d'environnement dans les conteneurs des Pods dans le fichier de Deployment (un peu comme on le faisait avec Docker Compose).
+- Vous aller devoir créer une nouvelle image Docker contenant la totalité du site Django, avec vos applis. Il vous faut donc utiliser votre projet de la première partie du cours, écrire un nouveau `Dockerfile`, ajouter des fichiers (settings, urls) qui chargeront tout votre projet. Créez l'image avec la commande :
+```
+docker build -t [Nom d'utilisateur Docker Hub]/[Nom de votre image]:[version (v1,v2,...)] -f [Nom de votre Dockerfile] [chemin/vers/Dockerfile] 
+```
+Puis envoyez l'image sur Docker Hub :
+```
+docker push [Nom d'utilisateur Docker Hub]/[Nom de votre image]:[version (v1,v2,...)]
+```
+- Si jamais ça ne fonctionne pas du premier coup, il vous faudra souvent construire une nouvelle image Docker de votre site Django. Associez des versions dans le tag de votre image au fur et à mesure, et modifiez le tag dans votre fichier de déploiement (*ceci est nécessaire car, par défaut, le cluster va mettre les images Docker en cache, et va réutiliser ce cache une fois qu'une image est téléchargée : modifier le tag va faire en sorte qu'il récupère à nouveau l'image sur Docker Hub, car son tag est différent donc l'image est différente*).
+- Parfois, le lancement des conteneurs peut être un peu long. Patientez une ou deux minutes avant de commencer à faire des requêtes vers le site via le proxy.
+- Créez les Deployments pour Django et la base de données dans des fichiers différents !
+
+Et un peu plus de documentation pour comprendre comment faire ! Bon courage, c'est un Défi assez difficile lorsqu'on le fait pour la première fois !
+
+- [Connecter des Applications avec des Services](https://kubernetes.io/docs/tutorials/services/connect-applications-service/)
+
+### Questions
+
+- Pourquoi utilise-t-on un service type NodePort pour le site Django et un service type ClusterIP pour la base de données ?
+- Quelle critique pouvez-vous donner vis-à-vis de l'utilisation d'un Pod pour la base de données ?
+- Sur quel type de ressource KubeDNS crée des entrées ? Quelle information propre a la ressource est utilisée ?
+- Le schéma !
+
+## **Internet ! Me voilà !** (Défi 4)
 
 Si vous avez réussi le Défi précédent, allez voir un professeur pour qu'il valide votre réussite et révèle ce défi.
 
 **???**
 
-## **???** (Défi 4)
+## **???** (Défi 5)
 
 **???**
