@@ -1,5 +1,12 @@
-kubectl -n u-9nl7s create deployment monpod --image=xhelozs/csc8567:v1
+```
+monkube create deployment monpod --image=xhelozs/csc8567:v1
 
-kubectl -n u-9nl7s port-forward pods/monpod 8080:80
+monkube port-forward pods/monpod-568d57dd54-ggkj9 8080:5000
 
-kubectl -n u-9nl7s logs monpod
+monkube  logs monpod-568d57dd54-ggkj9
+```
+![alt text](image.png)
+
+```
+monkube get pods 
+```
