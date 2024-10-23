@@ -1,3 +1,5 @@
+# u-9nl7s
+
 ```
 monkube create deployment monpod --image=xhelozs/csc8567:v1
 
@@ -10,3 +12,8 @@ monkube  logs monpod-568d57dd54-ggkj9
 ```
 monkube get pods 
 ```
+
+
+
+
+
