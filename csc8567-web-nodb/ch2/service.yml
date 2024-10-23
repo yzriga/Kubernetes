@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: mon-dep-service
 spec:
-  type: NodePort # pour l'ouverture des flux à l'exterieur du cluster aussi  
+  type: ClusterIP  
   selector:
     app: monDep  
   ports:
     - protocol: TCP
-      port: 8080       
+      port: 6437       
       targetPort: 5000 

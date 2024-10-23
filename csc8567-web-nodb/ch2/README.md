@@ -22,4 +22,4 @@ http://127.0.0.1:8001/api/v1/namespaces/u-9nl7s/services/mon-dep-service/proxy/
 
 ```
 
-![alt text](image.png)
+![alt text](image-1.png)
