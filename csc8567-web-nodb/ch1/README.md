@@ -1,4 +1,4 @@
-# u-9nl7s
+# monkube='kubectl -n u-9nl7s'
 
 ```
 monkube create deployment monpod --image=xhelozs/csc8567:v1
